@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 .menu {
-  display: none;
+  opacity: 0;
   position: fixed;
   top: 75px;
   left: 0;

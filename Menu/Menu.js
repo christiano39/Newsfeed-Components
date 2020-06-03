@@ -46,8 +46,24 @@ function menuMaker(menuArray){
   const menuButton = document.querySelector('.menu-button');
 
   menuButton.addEventListener('click', e => {
-      menuDiv.classList.toggle('menu--open');
-      gsap.from(menuDiv, {duration: 0.35, x: -200, ease: 'expo'});
+    if (!(menuDiv.className.includes('menu--open'))){
+      menuDiv.classList.add('menu--open');
+      gsap.fromTo(menuDiv, {
+        x: -200
+      },
+      {
+        duration: 0.35, x: 0, opacity: 100, ease: 'expo'
+      });
+    }else{
+      menuDiv.classList.remove('menu--open');
+      gsap.fromTo(menuDiv, {
+        x: 0
+      },
+      {
+        duration: 0.35, x: -400, ease: 'expo'
+      });
+    }
+      
   });
 
   return menuDiv;
