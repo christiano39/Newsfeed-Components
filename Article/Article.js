@@ -133,6 +133,8 @@ function articleMaker(article) {
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
   const expand = document.createElement('span');
+  const exitButton = document.createElement('button');
+  const firstLine = document.createElement('div');
 
   articleDiv.classList.add('article');
   //articleDiv.classList.add('article-open');
@@ -144,12 +146,20 @@ function articleMaker(article) {
   p3.textContent = article.thirdParagraph;
   expand.classList.add('expandButton');
   expand.textContent = 'Expand/Collapse';
+  exitButton.textContent = 'Mark as read';
+  firstLine.classList.add('line');
 
   expand.addEventListener('click', e => {
     articleDiv.classList.toggle('article-open');
   });
 
-  articleDiv.appendChild(title);
+  exitButton.addEventListener('click', e => {
+    articleDiv.classList.add('hidden');
+  });
+
+  firstLine.appendChild(title);
+  firstLine.appendChild(exitButton);
+  articleDiv.appendChild(firstLine);
   articleDiv.appendChild(date);
   articleDiv.appendChild(p1);
   articleDiv.appendChild(p2);

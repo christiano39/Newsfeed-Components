@@ -76,6 +76,18 @@
 .article-open {
   height: auto;
 }
+.hidden {
+  display: none;
+}
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.line button {
+  padding: 4px 6px;
+}
 .menu-button {
   position: absolute;
   left: 20px;
